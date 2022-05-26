@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Email Templater</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="linkContainer">
+            <!-- tabs -->
+            <a href="#" class="activeTab">Current Templates</a>
+            <a href="template.html" class="tab">Create Template</a>
+        </div> 
+        
+            <!-- holds all inputs -->
+        <form id="formContainer" onsubmit="return false"> 
+            
+            <div id="selectorContainer">
+                <label for="emailType">Email Type</label>
+                <select name="emailType" id="emailType">
+                    <option value="" selected>select email template</option>
+                    <option value="positiveEmail">Positive Email</option>
+                    <option value="behaviorProblems">Behavior Problems</option>
+                    <option value="failingNotice">Failing Notice</option>
+                </select>
+                <br>
+            </div>
+                     
+            <div id="inputContainer"></div>
+            
+            <button id="createEmailBtn" class="activeTab btn">Create Email</button>
+
+            <div id="emailExample"></div>
+            
+            <div id="overlay">
+                <div id="overlayMessage"></div>
+            </div>
+        
+        </form>
+        
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
