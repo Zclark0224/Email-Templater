@@ -28,7 +28,7 @@ const emailData = {
         emailTemplate:
             `Hello!
             
-            I am {firstName} {lastName}’s math teacher. I wanted to update you on the progress{firstName} has made in class. {firstName} is currently failing with a grade of {grade} and {numberOfMissingAssignments}. There is still time to get the grade up before the end of the quarter. You can view what assignments they are missing on progressbook.
+            I am {firstName} {lastName}’s math teacher. I wanted to update you on the progress {firstName} has made in class. {firstName} is currently failing with a grade of {grade} and {numberOfMissingAssignments}. There is still time to get the grade up before the end of the quarter. You can view what assignments they are missing on progressbook.
             
             Thanks and let me know if you have any questions or concerns!
             

@@ -24,14 +24,21 @@ function renderEmailType(){
     emailExample.innerHTML = currentEmailTemplate
        
     //render inputs to the screen
+    let currentInputsArr = []
     for(let input in currentInputs){
         let curInput = currentInputs[input]
         let curInputCamel = convertToCamelCase(curInput)
-        // add in camelCase function here
+        currentInputsArr.push(curInputCamel)
         inputContainer.innerHTML += `<label for="${curInputCamel}">${curInput}</label>
-                <input type="input" name="${curInputCamel}" id="${curInputCamel}" placeholder="type ${curInput} here">
+                <input type="input" name="${curInputCamel}" id="${curInputCamel}" class = "input" placeholder="type ${curInput} here">
                 <br>`
     }
+
+    console.log(currentInputsArr)
+    for(let i = 0; i < currentInputsArr.length; i++){
+        document.getElementById(currentInputsArr[i]).addEventListener("keyup", createEmail)
+    }
+
 }
 
 function createEmail(){
@@ -52,21 +59,6 @@ function createEmail(){
         const {searchText, value} = replaceMatrix[i]
         currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, value)
     }
-    
+
     emailExample.innerHTML = currentEmailTemplate
 }
-
-
-// createEmailBtn.addEventListener("click", function(){
-//     //get values from inputs
-//     const email = document.getElementById("email").value
-//     const firstName = document.getElementById("firstName").value
-//     const lastName = document.getElementById("lastName").value
-    
-//     //create new CreateEmail instance
-//     const positiveEmailOutput = new CreateEmail(email, firstName, lastName)
-    
-//     //active overlay
-//     overlayMessage.innerHTML = `${positiveEmailOutput.positiveEmail()}`
-//     overlay.style.display = "block"
-// })
