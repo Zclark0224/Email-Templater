@@ -34,7 +34,6 @@ function renderEmailType(){
                 <br>`
     }
 
-    console.log(currentInputsArr)
     for(let i = 0; i < currentInputsArr.length; i++){
         document.getElementById(currentInputsArr[i]).addEventListener("keyup", createEmail)
     }
@@ -57,7 +56,11 @@ function createEmail(){
     let currentEmailTemplate = currentEmailType.emailTemplate
     for(let i = 0; i < replaceMatrix.length; i++){
         const {searchText, value} = replaceMatrix[i]
+        if(value === ""){
+            currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, searchText)
+        }else{
         currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, value)
+        }
     }
 
     emailExample.innerHTML = currentEmailTemplate
