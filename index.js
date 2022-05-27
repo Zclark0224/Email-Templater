@@ -12,6 +12,12 @@ const emailExample = document.getElementById("emailExample")
 emailTypeSelector.addEventListener("change", renderEmailType)
 copyEmailBtn.addEventListener("click", function(){
     emailExample.focus();
+    emailExample.select();
+    document.execCommand('copy');
+    document.getElementById("customTooltip").style.display = "inline"
+    setTimeout( function() {
+        document.getElementById("customTooltip").style.display = "none";
+    }, 1000);
 })
 
 function renderEmailType(){

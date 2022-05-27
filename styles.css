@@ -160,3 +160,14 @@ a {
     padding: 1em;
     width: 100%;
 }
+
+.buttonTooltipContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#customTooltip {
+    display: none;
+    padding-top: 0.5em;
+}
