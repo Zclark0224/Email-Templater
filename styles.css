@@ -116,14 +116,14 @@ a {
     -ms-transform: translate(-50%,-50%);
 }
 
-#createEmailBtn,
+#copyEmailBtn,
 #createTemplateBtn {
     width: 100%;
 }
 
-#createEmailBtn:hover,
+#copyEmailBtn:hover,
 #createTemplateBtn:hover,
-#createEmailBtn:active,
+#copyEmailBtn:active,
 #createTemplateBtn:active {
     background-color: #2a2a2a;
     color: #fefefe;
@@ -158,4 +158,5 @@ a {
     background: #fff;
     border: 2px solid #0d0d0d;
     padding: 1em;
+    width: 100%;
 }

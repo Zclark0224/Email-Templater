@@ -1,7 +1,7 @@
 import emailData from '/data.js'
 import convertToCamelCase from './utils.js'
 
-const createEmailBtn = document.getElementById("createEmailBtn")
+const copyEmailBtn = document.getElementById("copyEmailBtn")
 const overlay = document.getElementById("overlay") 
 const overlayMessage = document.getElementById("overlayMessage")
 const emailTypeSelector = document.getElementById("emailType")
@@ -10,7 +10,9 @@ const emailExample = document.getElementById("emailExample")
 
 //change values based on selected input
 emailTypeSelector.addEventListener("change", renderEmailType)
-createEmailBtn.addEventListener("click", createEmail)
+copyEmailBtn.addEventListener("click", function(){
+    emailExample.focus();
+})
 
 function renderEmailType(){
     //reset container html content
@@ -59,7 +61,7 @@ function createEmail(){
         if(value === ""){
             currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, searchText)
         }else{
-        currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, value)
+            currentEmailTemplate = currentEmailTemplate.replaceAll(searchText, value)
         }
     }
 
