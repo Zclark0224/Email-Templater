@@ -124,9 +124,12 @@ a {
 #copyEmailBtn:hover,
 #createTemplateBtn:hover,
 #copyEmailBtn:active,
-#createTemplateBtn:active {
+#createTemplateBtn:active,
+.addValueBtn:hover,
+.addValueBtn:active {
     background-color: #2a2a2a;
     color: #fefefe;
+    cursor: pointer;
 }
 
 .btn {
@@ -170,4 +173,9 @@ a {
 #customTooltip {
     display: none;
     padding-top: 0.5em;
+}
+
+.addValueBtn {
+    border-radius: .75em;
+    background-color: var(--button-color);
 }

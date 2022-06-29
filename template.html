@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
         <title>Email Templater</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.tiny.cloud/1/7l3ic0iit101gkzqlzyd1cmmh2xike6ws2eyhat3xlhtd33n/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     </head>
     <body>
         <!-- tabs -->
@@ -18,27 +20,31 @@
                 <label for="templateName">Template Name</label>
                 <input type="text" name="templateName" id="templateName" placeholder="template name">
                 <br>
-                
+
                 <!-- value placeholders -->
                 <div id="valuesContainer">
                     <div class="value">
                         <label for="value1">Placeholder value</label>
                         <input type="text" name="value1" id="value1" placeholder="value name">
+                        <button id="addValue1ToEmail" class="addValueBtn">+</button>
                         <br>
                     </div>
                     <div class="value">
                         <label for="value2">Placeholder value</label>
                         <input type="text" name="value2" id="value2" placeholder="value name">
+                        <button id="addValue2ToEmail" class="addValueBtn">+</button>
                         <br>
                     </div>
                     <div class="value">
                         <label for="value3">Placeholder value</label>
                         <input type="text" name="value3" id="value3" placeholder="value name">
+                        <button id="addValue3ToEmail" class="addValueBtn">+</button>
                         <br>
                     </div>
                     <div class="value">
                         <label for="value4">Placeholder value</label>
                         <input type="text" name="value4" id="value4" placeholder="value name">
+                        <button id="addValue4ToEmail" class="addValueBtn">+</button>
                         <br>
                     </div>
                 </div>
@@ -46,7 +52,7 @@
                 <button id="addAnotherValue">+ add another value</button>
                 <br>
                 <label for="emailTextArea">Email Message</label>
-                <textarea id="emailTextArea" name="emailTextArea" rows="5" cols="20" placeholder="Type your message here..."></textarea>
+                <textarea id="emailTextArea" name="emailTextArea" placeholder="Type your message here..."></textarea>
             </form>
         
             <button id="createTemplateBtn" class="activeTab btn">Create Template</button>

@@ -3,9 +3,19 @@ const templateNameInput = document.getElementById('templateName')
 const addAnotherValueBtn = document.getElementById("addAnotherValue")
 const createTemplateBtn = document.getElementById("createTemplateBtn")
 const emailTextArea = document.getElementById("emailTextArea")
-const value1Input = document.getElementById("value1")
 
-let valuesArray = ['value1']
+// if(!window.localStorage.getItem('templates')){
+//     window.localStorage.setItem('templates', '')
+// }
+
+tinymce.init({
+    selector: 'textarea',
+    plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+    toolbar_mode: 'floating',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+  })
 
 addAnotherValueBtn.addEventListener("click", function(){
     const valueId = `value${valuesArray.length + 1}`
@@ -18,23 +28,25 @@ addAnotherValueBtn.addEventListener("click", function(){
     valuesArray.push(valueId)
 })
 
+document.
+
 createTemplateBtn.addEventListener("click", createTemplate)
 
-function createTemplate(){
-    const newTemplateName = templateNameInput.value
-    const newValue1 = value1Input.value
-    const newEmailTemplate = emailTextArea.value
-    
-    let newTemplate = new TemplateData(newTemplateName, newValue1, newEmailTemplate)
-    
-    console.log(newTemplate)
+function addValueToTemplate(value){
+    let currentValue = document.getElementById(`${value}`).value.toLowerCase()
+    let myContent = tinymce.activeEditor.getContent().slice(0, -4)
+    tinymce.activeEditor.setContent(`${myContent}{{${currentValue}}}`);
 }
 
-class TemplateData {
-    constructor(templateName, inputs, emailTemplate){
-        this.templateName = templateName
-        this.inputs = inputs
-        this.emailTemplate = emailTemplate
+function createTemplate(){
+    const templateName = templateNameInput.value
+    // const userInputs = 
+    const emailTemplate = emailTextArea.value
+
+    const templateData = {
+        inputs: userInputs,
+        emailTemplate: emailTemplate,
     }
-    
+
+    window.localStorage.setItem(`${templateName}`, JSON.stringify(templateData))
 }
